@@ -32,7 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.popover.animates = false
         
         hotKey.keyDownHandler = {
-            print("detected globalhotkey")
             self.showPopover(sender: nil)
         }
     }
@@ -45,16 +44,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print("event \(NSApp.currentEvent!.type)")
         switch NSApp.currentEvent!.type {
         case .rightMouseUp:
-            print("rightmouseup")
             statusItem.menu = menu
             statusItem.button?.performClick(nil)
             statusItem.menu = nil
         default:
             if AppDelegate.popover.isShown {
-                print("toggle close")
                 closePopover(sender: sender)
             } else {
-                print("toggle off")
                 showPopover(sender: sender)
             }
         }

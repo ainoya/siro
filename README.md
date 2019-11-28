@@ -5,6 +5,11 @@ Made posting slack messages easy
 
 ![](https://i.gyazo.com/48bb9669f10925464b3a7fe19bce14d2.gif)
 
+Installation
+--------------
+
+You can download this app on [release](https://github.com/ainoya/siro/releases) page. please download latest version `siro.app.zip` and unarchive, then you can try it quickly.
+
 Configuration
 ----------------
 

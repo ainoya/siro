@@ -17,12 +17,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let hotKey = HotKey(key: .m, modifiers: [.control, .shift])
     static var slackService: SlackService? = SlackService.restore()
     
+    @IBOutlet weak var menu: NSMenu!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        
         if let button = statusItem.button {
-//            button.title = "🐣"
+            //            button.title = "🐣"
             button.image = NSImage(named:NSImage.Name("StatusBarImage"))
             button.action = #selector(togglePopover(_:))
+            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
         }
         AppDelegate.popover.contentViewController = ViewController.freshController()
         AppDelegate.popover.animates = false
@@ -31,8 +35,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             print("detected globalhotkey")
             self.showPopover(sender: nil)
         }
-        
-        constructMenu()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -40,13 +42,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func togglePopover(_ sender: Any?) {
-        print("toggle")
-        if AppDelegate.popover.isShown {
-            print("toggle close")
-            closePopover(sender: sender)
-        } else {
-            print("toggle off")
-            showPopover(sender: sender)
+        print("event \(NSApp.currentEvent!.type)")
+        switch NSApp.currentEvent!.type {
+        case .rightMouseUp:
+            print("rightmouseup")
+            statusItem.menu = menu
+            statusItem.button?.performClick(nil)
+            statusItem.menu = nil
+        default:
+            if AppDelegate.popover.isShown {
+                print("toggle close")
+                closePopover(sender: sender)
+            } else {
+                print("toggle off")
+                showPopover(sender: sender)
+            }
         }
     }
     
@@ -60,22 +70,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.popover.performClose(sender)
     }
     
-    func constructMenu() {
-      let menu = NSMenu()
-
-        menu.addItem(NSMenuItem(title: "Settings", action: #selector(showSettings(_:)), keyEquivalent: "s"))
-      menu.addItem(NSMenuItem.separator())
-      menu.addItem(NSMenuItem(title: "Quit Siro", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-
-      statusItem.menu = menu
-    }
     
     var windowController : NSWindowController!
-
-    @objc func showSettings(_ sender: Any?) {
+    
+    
+    @IBAction func quit(_ sender: Any) {
+        let _ = NSApplication.terminate(_:)
+    }
+    
+    @IBAction func showSiroSettings(_ sender: Any) {
         let mainStoryBoard = NSStoryboard(name: "Main", bundle: nil)
         windowController = mainStoryBoard.instantiateController(withIdentifier: "Settings") as? NSWindowController
-        let settingsController = windowController.window!.contentViewController as! SettingsViewController
         // make initial settings before showing the window
         windowController.showWindow(self)
     }

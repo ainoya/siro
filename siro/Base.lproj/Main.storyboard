@@ -675,7 +675,25 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="siro" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="siro" customModuleProvider="target">
+                    <connections>
+                        <outlet property="menu" destination="9k9-Re-SsJ" id="wL6-7C-8rQ"/>
+                    </connections>
+                </customObject>
+                <menu id="9k9-Re-SsJ">
+                    <items>
+                        <menuItem title="⚙Settings" keyEquivalent="s" id="lGa-j3-uS8">
+                            <connections>
+                                <action selector="showSiroSettings:" target="Voe-Tx-rLC" id="moo-FY-Kbe"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="💨Quit Siro" keyEquivalent="q" id="QqY-yU-1fx" userLabel="Quit">
+                            <connections>
+                                <action selector="quit:" target="Voe-Tx-rLC" id="RM3-F2-jcH"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

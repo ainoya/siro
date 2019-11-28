@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     @IBAction func quit(_ sender: Any) {
-        let _ = NSApplication.terminate(_:)
+        exit(0)
     }
     
     @IBAction func showSiroSettings(_ sender: Any) {

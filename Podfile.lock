@@ -1,0 +1,50 @@
+PODS:
+  - HotKey (0.1.2)
+  - KeychainAccess (4.1.0)
+  - SlackKit (4.5.0):
+    - SlackKit/SlackKit (= 4.5.0)
+  - SlackKit/SKClient (4.5.0):
+    - SlackKit/SKCore
+  - SlackKit/SKCore (4.5.0)
+  - SlackKit/SKRTMAPI (4.5.0):
+    - SlackKit/SKCore
+    - SlackKit/SKWebAPI
+    - Starscream (= 3.1.0)
+  - SlackKit/SKServer (4.5.0):
+    - SlackKit/SKCore
+    - SlackKit/SKWebAPI
+    - Swifter (= 1.4.6)
+  - SlackKit/SKWebAPI (4.5.0):
+    - SlackKit/SKCore
+  - SlackKit/SlackKit (4.5.0):
+    - SlackKit/SKClient
+    - SlackKit/SKCore
+    - SlackKit/SKRTMAPI
+    - SlackKit/SKServer
+    - SlackKit/SKWebAPI
+  - Starscream (3.1.0)
+  - Swifter (1.4.6)
+
+DEPENDENCIES:
+  - HotKey
+  - KeychainAccess
+  - SlackKit
+
+SPEC REPOS:
+  trunk:
+    - HotKey
+    - KeychainAccess
+    - SlackKit
+    - Starscream
+    - Swifter
+
+SPEC CHECKSUMS:
+  HotKey: ad59450195936c10992438c4210f673de5aee43e
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  SlackKit: d84414e87d922c06e3eac4fd42e51fbbea712d6c
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  Swifter: 2ed278fbf7b16cbe97269eb56d8e8749b1ec4042
+
+PODFILE CHECKSUM: 3359024ca61358e92def6c8e59800145324888a2
+
+COCOAPODS: 1.8.4

@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="siro" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,7 +685,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Siro Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -700,18 +702,192 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="SettingsViewController" customModule="siro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="563" height="212"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUt-O6-vCk">
+                                <rect key="frame" x="16" y="8" width="531" height="204"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YrS-4s-rOb" userLabel="channel">
+                                        <rect key="frame" x="240" y="175" width="52" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="channel" placeholderString="I" id="7ch-ss-udX">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nKT-o4-s5l" userLabel="channel">
+                                        <rect key="frame" x="126" y="138" width="280" height="21"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="enter slack channel name you want to post" drawsBackground="YES" id="GPF-aF-2if">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="joq-zO-hsr">
+                                        <rect key="frame" x="206" y="106" width="120" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="slack legacy token" allowsEditingTextAttributes="YES" id="sqP-XL-kNi" userLabel="slack legacy token ( https://api.slack.com/custom-integrations/legacy-tokens )">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Upp-CZ-gxn" userLabel="legacy token link" customClass="HyperlinkTextField" customModule="siro" customModuleProvider="target">
+                                        <rect key="frame" x="184" y="74" width="164" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Generate Slack API Token" allowsEditingTextAttributes="YES" id="K2e-Ib-CDk" userLabel="slack legacy token ( https://api.slack.com/custom-integrations/legacy-tokens )" customClass="I">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://slack.com/intl/ja-jp/help/articles/215770388-create-and-regenerate-api-tokens"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SPY-nD-hfu">
+                                        <rect key="frame" x="218" y="37" width="96" height="21"/>
+                                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="enter your slack bot token" drawsBackground="YES" usesSingleLineMode="YES" id="QEn-Lt-3Bb">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <allowedInputSourceLocales>
+                                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                            </allowedInputSourceLocales>
+                                        </secureTextFieldCell>
+                                    </secureTextField>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Puh-dp-gdc">
+                                        <rect key="frame" x="179" y="0.0" width="174" height="21"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-jr-OS0">
+                                                <rect key="frame" x="-6" y="-7" width="122" height="32"/>
+                                                <buttonCell key="cell" type="push" title="webhook test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kP2-bW-p3c">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="postMessageTest:" target="XfG-lQ-9wD" id="V1g-oZ-D7s"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cmt-xo-ftr">
+                                                <rect key="frame" x="112" y="-7" width="68" height="32"/>
+                                                <buttonCell key="cell" type="push" title="save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Uqn-Bf-uru" userLabel="Save">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="save:" target="XfG-lQ-9wD" id="3j0-fg-lUK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YrS-4s-rOb" firstAttribute="top" secondItem="GUt-O6-vCk" secondAttribute="top" constant="8" id="wcj-RR-xOR"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="GUt-O6-vCk" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="H9E-Ej-i2p"/>
+                            <constraint firstAttribute="bottom" secondItem="GUt-O6-vCk" secondAttribute="bottom" constant="8" id="K8i-A4-9pe"/>
+                            <constraint firstAttribute="trailing" secondItem="GUt-O6-vCk" secondAttribute="trailing" constant="16" id="Kcz-TK-fpO"/>
+                            <constraint firstItem="GUt-O6-vCk" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="M50-om-OUD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slackBotToken" destination="SPY-nD-hfu" id="9WI-uI-rxz"/>
+                        <outlet property="slackChannel" destination="nKT-o4-s5l" id="1YZ-k2-MnF"/>
+                        <outlet property="slackToken" destination="SPY-nD-hfu" id="DgT-gz-3Rr"/>
+                        <outlet property="slackTokenText" destination="joq-zO-hsr" id="bbR-hT-WcW"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="675"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RxC-5i-eQC">
+            <objects>
+                <viewController storyboardIdentifier="StatusBarWindow" id="y51-qL-igV" customClass="ViewController" customModule="siro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="3CW-s8-92u">
+                        <rect key="frame" x="0.0" y="0.0" width="496" height="256"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNK-ED-Usm">
+                                <rect key="frame" x="8" y="8" width="480" height="240"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="eJo-eK-fmw">
+                                    <rect key="frame" x="0.0" y="0.0" width="465" height="240"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="SaU-97-U1S">
+                                            <rect key="frame" x="0.0" y="0.0" width="465" height="240"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="465" height="240"/>
+                                            <size key="maxSize" width="480" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <binding destination="y51-qL-igV" name="value" keyPath="self.textField" id="xub-Ju-SfD"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="480" id="cTs-MH-x2D"/>
+                                    <constraint firstAttribute="height" constant="240" id="gQK-Fm-MWZ"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1Ph-Zq-O0t">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="vIk-za-IWi">
+                                    <rect key="frame" x="465" y="0.0" width="15" height="240"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QNK-ED-Usm" firstAttribute="leading" secondItem="3CW-s8-92u" secondAttribute="leading" constant="8" id="1ST-ak-Ek8"/>
+                            <constraint firstAttribute="bottom" secondItem="QNK-ED-Usm" secondAttribute="bottom" constant="8" id="Dmb-fb-Nqp"/>
+                            <constraint firstItem="QNK-ED-Usm" firstAttribute="top" secondItem="3CW-s8-92u" secondAttribute="top" constant="8" id="q3S-NJ-K2b"/>
+                            <constraint firstAttribute="trailing" secondItem="QNK-ED-Usm" secondAttribute="trailing" constant="8" id="vcV-nK-MLA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="SaU-97-U1S" id="LQM-uI-eJ4"/>
+                    </connections>
+                </viewController>
+                <customObject id="Isb-oG-99L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-494" y="697"/>
         </scene>
     </scenes>
 </document>

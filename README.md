@@ -1,7 +1,7 @@
 Siro
 =======
 
-Made posting slack easy
+Made posting slack messages easy
 
 ![](https://i.gyazo.com/48bb9669f10925464b3a7fe19bce14d2.gif)
 

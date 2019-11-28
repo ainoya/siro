@@ -14,6 +14,7 @@ class SettingsViewController: NSViewController {
     
     @IBOutlet weak var slackTokenText: NSTextField!
     @IBAction func postMessageTest(_ sender: Any) {
+        self.configureSlackService()
         AppDelegate.slackService?.postMessage(
             message: "This is test!!",
             success: { e in
@@ -36,6 +37,10 @@ class SettingsViewController: NSViewController {
     }
     
     @IBAction func save(_ sender: Any) {
+        self.configureSlackService()
+    }
+    
+    private func configureSlackService() {
         let s = SlackService(token: slackToken.stringValue, channel: slackChannel.stringValue)
         AppDelegate.slackService = s
     }
@@ -47,6 +52,8 @@ class SettingsViewController: NSViewController {
         let s = AppDelegate.slackService
         slackChannel.stringValue = s?.channel ?? ""
         slackToken.stringValue = s?.token ?? ""
+        self.view.window?.makeKeyAndOrderFront(nil)
+        NSApplication.shared.activate(ignoringOtherApps: true)
     }
     
 }

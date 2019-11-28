@@ -29,13 +29,12 @@ class ViewController: NSViewController {
     override func keyDown(with event: NSEvent) {
         switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
         case [.command] where event.keyCode == 36 || event.keyCode == 76:
-            print("command-enter")
             AppDelegate.slackService?.postMessage(
                 message: textField.string,
                 success: { _ in
                     DispatchQueue.main.async {
                         self.textField.string = ""
-                        AppDelegate.popover.performClose(nil)
+//                        AppDelegate.popover.performClose(nil)
                     }
                 },
                 failure: { e in

@@ -909,15 +909,15 @@ DQ
                                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNK-ED-Usm">
                                         <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="eJo-eK-fmw">
-                                            <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="465" height="240"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="SaU-97-U1S">
-                                                    <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="465" height="240"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="480" height="240"/>
+                                                    <size key="minSize" width="465" height="240"/>
                                                     <size key="maxSize" width="480" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <connections>
@@ -930,12 +930,12 @@ DQ
                                             <constraint firstAttribute="width" constant="480" id="cTs-MH-x2D"/>
                                             <constraint firstAttribute="height" constant="240" id="gQK-Fm-MWZ"/>
                                         </constraints>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="1Ph-Zq-O0t">
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1Ph-Zq-O0t">
                                             <rect key="frame" x="-100" y="-100" width="225" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="vIk-za-IWi">
-                                            <rect key="frame" x="464" y="0.0" width="16" height="240"/>
+                                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="vIk-za-IWi">
+                                            <rect key="frame" x="465" y="0.0" width="15" height="240"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>

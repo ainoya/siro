@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SettingsViewController: NSViewController {
+class SettingsViewController: NSViewController, NSWindowDelegate {
     @IBOutlet weak var slackToken: NSSecureTextField!
     @IBOutlet weak var slackChannel: NSTextField!
     
@@ -36,6 +36,17 @@ class SettingsViewController: NSViewController {
         )
     }
     
+    override func viewDidAppear() {
+        self.view.window?.delegate = self
+        NSApp.setActivationPolicy(.regular)
+    }
+    
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        NSApp.setActivationPolicy(.accessory)
+        return true
+    }
+
+
     @IBAction func save(_ sender: Any) {
         self.configureSlackService()
     }

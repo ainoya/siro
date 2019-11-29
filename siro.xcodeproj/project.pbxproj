@@ -15,6 +15,7 @@
 		7B4CD3CD238E5A3700265D5A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CD3CC238E5A3700265D5A /* SettingsViewController.swift */; };
 		7B4CD3CF238E633000265D5A /* SlackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CD3CE238E633000265D5A /* SlackService.swift */; };
 		7B4CD3D1238F7F9C00265D5A /* HyperLinkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CD3D0238F7F9C00265D5A /* HyperLinkTextField.swift */; };
+		7B91850623909E5D009A4B24 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B91850523909E5D009A4B24 /* MainWindowController.swift */; };
 		8DB610D97186C033BE0A840E /* Pods_siro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D72FD0537F78BB774BF5B1 /* Pods_siro.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		7B4CD3CC238E5A3700265D5A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7B4CD3CE238E633000265D5A /* SlackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackService.swift; sourceTree = "<group>"; };
 		7B4CD3D0238F7F9C00265D5A /* HyperLinkTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperLinkTextField.swift; sourceTree = "<group>"; };
+		7B91850523909E5D009A4B24 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		BA1F3D13B16F92478D549E8C /* Pods-siro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-siro.debug.xcconfig"; path = "Target Support Files/Pods-siro/Pods-siro.debug.xcconfig"; sourceTree = "<group>"; };
 		D4398D50DE4EE783ED63D891 /* Pods-siro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-siro.release.xcconfig"; path = "Target Support Files/Pods-siro/Pods-siro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				7B4CD3BA238E492A00265D5A /* AppDelegate.swift */,
 				7B4CD3BC238E492A00265D5A /* ViewController.swift */,
 				7B4CD3CC238E5A3700265D5A /* SettingsViewController.swift */,
+				7B91850523909E5D009A4B24 /* MainWindowController.swift */,
 				7B4CD3D0238F7F9C00265D5A /* HyperLinkTextField.swift */,
 				7B4CD3CA238E58DB00265D5A /* SuprressKeySound.swift */,
 				7B4CD3CE238E633000265D5A /* SlackService.swift */,
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B4CD3CB238E58DB00265D5A /* SuprressKeySound.swift in Sources */,
+				7B91850623909E5D009A4B24 /* MainWindowController.swift in Sources */,
 				7B4CD3CF238E633000265D5A /* SlackService.swift in Sources */,
 				7B4CD3BD238E492A00265D5A /* ViewController.swift in Sources */,
 				7B4CD3BB238E492A00265D5A /* AppDelegate.swift in Sources */,
@@ -357,7 +361,7 @@
 				CODE_SIGN_ENTITLEMENTS = siro/siro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 9254J5769W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = siro/Info.plist;
@@ -380,7 +384,7 @@
 				CODE_SIGN_ENTITLEMENTS = siro/siro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 9254J5769W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = siro/Info.plist;

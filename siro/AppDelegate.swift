@@ -16,12 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static let popover = NSPopover()
     let hotKey = HotKey(key: .m, modifiers: [.control, .shift])
     static var slackService: SlackService? = SlackService.restore()
-    
+
     @IBOutlet weak var menu: NSMenu!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        
         if let button = statusItem.button {
             //            button.title = "🐣"
             button.image = NSImage(named:NSImage.Name("StatusBarImage"))
@@ -36,6 +35,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    private func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) {
+        let _ = showSiroSettings(_:)
+    }
+
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
@@ -71,7 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     @IBAction func quit(_ sender: Any) {
-        exit(0)
+        NSApplication.shared.terminate(sender)
     }
     
     @IBAction func showSiroSettings(_ sender: Any) {

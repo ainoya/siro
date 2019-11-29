@@ -13,20 +13,29 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
-            self.keyDown(with: $0)
-            return $0
+            if self.myKeyDown(with: $0) {
+                return nil
+            } else {
+                return $0
+            }
         }
         textField.string = ""
         // Do any additional setupa after loading the view.
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    
+    @IBAction func closeButton(_ sender: NSButton) {
+        AppDelegate.popover.performClose(nil)
     }
     
-    override func keyDown(with event: NSEvent) {
+    override var representedObject: Any? {
+        didSet {
+            // Update the view, if already loaded.
+        }
+    }
+
+    func myKeyDown(with event: NSEvent) -> Bool {
+        guard let locWindow = self.view.window,
+           NSApplication.shared.keyWindow === locWindow else { return false }
         switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
         case [.command] where event.keyCode == 36 || event.keyCode == 76:
             AppDelegate.slackService?.postMessage(
@@ -34,9 +43,9 @@ class ViewController: NSViewController {
                 success: { _ in
                     DispatchQueue.main.async {
                         self.textField.string = ""
-//                        AppDelegate.popover.performClose(nil)
+                        //                        AppDelegate.popover.performClose(nil)
                     }
-                },
+            },
                 failure: { e in
                     DispatchQueue.main.async {
                         let a = NSAlert()
@@ -44,18 +53,15 @@ class ViewController: NSViewController {
                         a.messageText = "failed posting message to slack: \(e)"
                         a.runModal()
                     }
-                }
+            }
             )
-            
+            return true
         case _ where event.keyCode == 53:
             AppDelegate.popover.performClose(nil)
+            return true
         default:
-            break
+            return false
         }
-//        print("key = " + (event.charactersIgnoringModifiers
-//            ?? ""))
-//        print("ncharacter = " + (event.characters ?? ""))
-//        print("keycode \(event.keyCode)")
     }
     
     override func performKeyEquivalent(with event: NSEvent) -> Bool {
@@ -65,16 +71,16 @@ class ViewController: NSViewController {
 
 
 extension ViewController {
-  // MARK: Storyboard instantiation
-  static func freshController() -> ViewController {
-    //1.
-    let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-    //2.
-    let identifier = NSStoryboard.SceneIdentifier("StatusBarWindow")
-    //3.
-    guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
-      fatalError("Why cant i find QuotesViewController? - Check Main.storyboard")
+    // MARK: Storyboard instantiation
+    static func freshController() -> ViewController {
+        //1.
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        //2.
+        let identifier = NSStoryboard.SceneIdentifier("StatusBarWindow")
+        //3.
+        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
+            fatalError("Why cant i find ViewController? - Check Main.storyboard")
+        }
+        return viewcontroller
     }
-    return viewcontroller
-  }
 }

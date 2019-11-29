@@ -32,31 +32,35 @@ class ViewController: NSViewController {
             // Update the view, if already loaded.
         }
     }
+    @IBAction func sendButton(_ sender: Any) {
+        self.postMessage()
+    }
+    
+    func postMessage() {
+        AppDelegate.slackService?.postMessage(
+            message: textField.string,
+            success: { _ in
+                DispatchQueue.main.async {
+                    self.textField.string = ""
+                    //                        AppDelegate.popover.performClose(nil)
+                }
+        },
+            failure: { e in
+                DispatchQueue.main.async {
+                    let a = NSAlert()
+                    a.alertStyle = .critical
+                    a.messageText = "failed posting message to slack: \(e)"
+                    a.runModal()
+                }
+        }
+        )
+    }
 
     func myKeyDown(with event: NSEvent) -> Bool {
         guard let locWindow = self.view.window,
            NSApplication.shared.keyWindow === locWindow else { return false }
         switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
-        case [.command] where event.keyCode == 36 || event.keyCode == 76:
-            AppDelegate.slackService?.postMessage(
-                message: textField.string,
-                success: { _ in
-                    DispatchQueue.main.async {
-                        self.textField.string = ""
-                        //                        AppDelegate.popover.performClose(nil)
-                    }
-            },
-                failure: { e in
-                    DispatchQueue.main.async {
-                        let a = NSAlert()
-                        a.alertStyle = .critical
-                        a.messageText = "failed posting message to slack: \(e)"
-                        a.runModal()
-                    }
-            }
-            )
-            return true
-        case _ where event.keyCode == 53:
+       case _ where event.keyCode == 53:
             AppDelegate.popover.performClose(nil)
             return true
         default:

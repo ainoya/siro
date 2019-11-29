@@ -867,6 +867,20 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="8f2-FV-2yK">
                                         <rect key="frame" x="0.0" y="240" width="482" height="29"/>
                                         <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xns-An-oRd">
+                                                <rect key="frame" x="413" y="-3" width="71" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Send" alternateTitle="command + enter" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hvV-EB-2LE">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="sendButton:" target="y51-qL-igV" id="wVH-cd-aYI"/>
+                                                </connections>
+                                            </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-Ue-aAS">
                                                 <rect key="frame" x="-2" y="-3" width="75" height="32"/>
                                                 <constraints>
@@ -882,24 +896,28 @@
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="xns-An-oRd" firstAttribute="top" secondItem="8f2-FV-2yK" secondAttribute="top" constant="4" id="Htt-r0-KhG"/>
                                             <constraint firstAttribute="bottom" secondItem="zf6-Ue-aAS" secondAttribute="bottom" constant="4" id="Qgh-Cr-a8j"/>
                                             <constraint firstItem="zf6-Ue-aAS" firstAttribute="top" secondItem="8f2-FV-2yK" secondAttribute="top" constant="4" id="Z2K-a5-PBK"/>
+                                            <constraint firstAttribute="bottom" secondItem="xns-An-oRd" secondAttribute="bottom" constant="4" id="gCQ-i3-hFg"/>
+                                            <constraint firstItem="xns-An-oRd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zf6-Ue-aAS" secondAttribute="trailing" constant="12" symbolic="YES" id="gHn-Wq-ZZq"/>
                                             <constraint firstItem="zf6-Ue-aAS" firstAttribute="leading" secondItem="8f2-FV-2yK" secondAttribute="leading" constant="4" id="l49-GM-rxd"/>
+                                            <constraint firstAttribute="trailing" secondItem="xns-An-oRd" secondAttribute="trailing" constant="4" id="m7A-FJ-IkL"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zf6-Ue-aAS" secondAttribute="trailing" constant="20" symbolic="YES" id="uaK-Pj-bqn"/>
                                         </constraints>
                                     </customView>
                                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNK-ED-Usm">
                                         <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="eJo-eK-fmw">
-                                            <rect key="frame" x="0.0" y="0.0" width="465" height="240"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="SaU-97-U1S">
-                                                    <rect key="frame" x="0.0" y="0.0" width="465" height="240"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="465" height="240"/>
+                                                    <size key="minSize" width="480" height="240"/>
                                                     <size key="maxSize" width="480" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <connections>
@@ -912,12 +930,12 @@
                                             <constraint firstAttribute="width" constant="480" id="cTs-MH-x2D"/>
                                             <constraint firstAttribute="height" constant="240" id="gQK-Fm-MWZ"/>
                                         </constraints>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1Ph-Zq-O0t">
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="1Ph-Zq-O0t">
                                             <rect key="frame" x="-100" y="-100" width="225" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="vIk-za-IWi">
-                                            <rect key="frame" x="465" y="0.0" width="15" height="240"/>
+                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="vIk-za-IWi">
+                                            <rect key="frame" x="464" y="0.0" width="16" height="240"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>

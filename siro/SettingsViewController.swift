@@ -38,11 +38,11 @@ class SettingsViewController: NSViewController, NSWindowDelegate {
     
     override func viewDidAppear() {
         self.view.window?.delegate = self
-        NSApp.setActivationPolicy(.regular)
+//        NSApp.setActivationPolicy(.regular)
     }
     
     func windowShouldClose(_ sender: NSWindow) -> Bool {
-        NSApp.setActivationPolicy(.accessory)
+//        NSApp.setActivationPolicy(.accessory)
         return true
     }
 

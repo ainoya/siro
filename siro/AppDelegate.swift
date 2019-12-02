@@ -35,9 +35,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    private func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) {
-        let _ = showSiroSettings(_:)
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        let _ = showSiroSettings(sender)
+        return true
     }
+
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application

@@ -668,6 +668,7 @@
                                         <menuItem title="siro Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                                <segue destination="gnQ-f5-d4M" kind="show" id="0ff-HV-bmP"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -969,6 +970,87 @@ DQ
                 <customObject id="Isb-oG-99L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-504" y="643.5"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="1bR-XV-jC3">
+            <objects>
+                <windowController id="gnQ-f5-d4M" sceneMemberID="viewController">
+                    <window key="window" title="Help" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="mD3-pT-k6I">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="516" y="564" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3008" height="1669"/>
+                        <connections>
+                            <outlet property="delegate" destination="gnQ-f5-d4M" id="kE1-NX-Lbm"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="4Uc-Xc-AQo" kind="relationship" relationship="window.shadowedContentViewController" id="yIr-3E-kBW"/>
+                    </connections>
+                </windowController>
+                <customObject id="T4y-IE-6j9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="1134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="N9z-vg-2gd">
+            <objects>
+                <viewController id="4Uc-Xc-AQo" sceneMemberID="viewController">
+                    <view key="view" id="2tn-xs-M19">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTk-WE-XPU">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="EqZ-nN-BcJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="465" height="270"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="eYo-WD-558">
+                                            <rect key="frame" x="0.0" y="0.0" width="465" height="270"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="465" height="270"/>
+                                            <size key="maxSize" width="465" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment>
+                                                    <string key="content">Usage:  1. ctrl+shift+M: open a text window
+2. write something as you like
+3. command+enter: send the text to slack
+4. Esc: close text window</string>
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="7CP-PS-OZl">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="EYf-dF-Yyu">
+                                    <rect key="frame" x="465" y="0.0" width="15" height="270"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="bTk-WE-XPU" firstAttribute="top" secondItem="2tn-xs-M19" secondAttribute="top" id="3ld-oS-LEm"/>
+                            <constraint firstAttribute="bottom" secondItem="bTk-WE-XPU" secondAttribute="bottom" id="7Io-bI-tME"/>
+                            <constraint firstAttribute="trailing" secondItem="bTk-WE-XPU" secondAttribute="trailing" id="Osa-42-NBj"/>
+                            <constraint firstItem="bTk-WE-XPU" firstAttribute="leading" secondItem="2tn-xs-M19" secondAttribute="leading" id="ab2-iN-x5E"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="4rH-7b-ymd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="1128"/>
         </scene>
     </scenes>
 </document>

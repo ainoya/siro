@@ -1,4 +1,4 @@
-Siro 
+Siro [![](https://raw.githubusercontent.com/ainoya/siro/223e96681ddd7e62ecf8c70e28d77c8f8a7b35bc/images/appstore.svg)](https://apps.apple.com/us/app/siro/id1489576942)
 =======
 
 Made posting slack messages easy

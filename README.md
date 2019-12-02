@@ -1,5 +1,7 @@
-Siro [![](https://raw.githubusercontent.com/ainoya/siro/223e96681ddd7e62ecf8c70e28d77c8f8a7b35bc/images/appstore.svg)](https://apps.apple.com/us/app/siro/id1489576942)
-=======
+Siro
+=====
+
+<a href="https://apps.apple.com/us/app/siro/id1489576942?mt=12&app=apps" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-12-01T00:00:00Z&kind=desktopapp&bubble=apple_music) no-repeat;width:165px;height:40px;"></a>
 
 Made posting slack messages easy
 

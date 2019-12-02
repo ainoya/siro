@@ -8,7 +8,9 @@ Made posting slack messages easy
 Installation
 --------------
 
-You can download this app on [release](https://github.com/ainoya/siro/releases) page. please download latest version `siro.app.zip` and unarchive, then you can try it quickly.
+Please install Siro from [Mac App Store](https://apps.apple.com/us/app/siro/id1489576942)
+
+Or, you can download this app on [release](https://github.com/ainoya/siro/releases) page. please download latest version `siro.app.zip` and unarchive, then you can try it quickly.
 
 Configuration
 ----------------

@@ -1,7 +1,5 @@
-Siro
+Siro <a href="https://apps.apple.com/us/app/siro/id1489576942?mt=12&app=apps"><img src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-12-01T00:00:00Z&kind=desktopapp&bubble=apple_music" /></a>
 =====
-
-<a href="https://apps.apple.com/us/app/siro/id1489576942?mt=12&app=apps"><img src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-12-01T00:00:00Z&kind=desktopapp&bubble=apple_music" /></a>
 
 Made posting slack messages easy
 
